@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quer namorar comigo?</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* fundo claro azul e rosa */
+      color: #3b0a0a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      transition: background 0.5s ease-in-out;
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #8B0011;
+      text-shadow: 1px 1px 3px #fff;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 20px; /* margem abaixo dos botões */
+      position: relative;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yes {
+      background-color: #d85669;
+      color: rgb(0, 0, 0);
+    }
+
+    #no {
+      background-color: #FCA7C1;
+      color: rgb(0, 0, 0);
+      position: absolute;
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 1.8em;
+      display: none;
+      color: #8B0011;
+      text-shadow: 1px 1px 2px #fff;
+    }
+
+    .image {
+      margin-top: 0;
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 6px solid #d85669; /* borda sólida rosa/vinho */
+      box-shadow: 0 0 15px rgba(216, 86, 105, 0.7);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .image:hover {
+      box-shadow: 0 0 30px rgba(216, 86, 105, 1);
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .image {
+        width: 250px;
+        height: 250px;
+      }
+
+      button {
+        padding: 12px 25px;
+        font-size: 1em;
+      }
+
+      .buttons {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      #no {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Quer namorar comigo? 💖</h1>
+
+  <div class="buttons">
+    <button id="yes">Sim 😍</button>
+    <button id="no">Não 😅</button>
+  </div>
+
+  <img src="Imagem do WhatsApp de 2025-06-11 à(s) 20.08.13_ad1e6538.jpg" alt="Foto romântica" class="image" />
+
+  <div class="message" id="message">Eu sabia😉</div>
+
+  <script>
+    const btnYes = document.getElementById('yes');
+    const btnNo = document.getElementById('no');
+    const message = document.getElementById('message');
+
+    btnYes.addEventListener('click', () => {
+      message.style.display = 'block';
+      document.body.style.background = "linear-gradient(135deg, #fbc7d4, #9b59b6)";
+    });
+
+    btnNo.addEventListener('pointerenter', () => {
+      const x = Math.random() * (window.innerWidth - btnNo.offsetWidth);
+      const y = Math.random() * (window.innerHeight - btnNo.offsetHeight);
+      btnNo.style.left = `${x}px`;
+      btnNo.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>
